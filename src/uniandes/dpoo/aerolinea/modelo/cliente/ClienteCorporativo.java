@@ -13,9 +13,6 @@ public class ClienteCorporativo extends Cliente
     public static final int PEQUENA = 3;
     private String nombreEmpresa;
     private int tamanoEmpresa;
-    
-    
-
 
     public ClienteCorporativo (String nombreEmpresa, int tamanoEmpresa) {
     	super();
@@ -49,4 +46,19 @@ public class ClienteCorporativo extends Cliente
         jobject.put( "tipo", CORPORATIVO );
         return jobject;
     }
+	@Override
+	public String getTipoCliente() {
+		return CORPORATIVO;
+	}
+	
+	public String getNombreEmpresa() {
+		return nombreEmpresa;
+	}
+	public int getTamanoEmpresa() {
+		return tamanoEmpresa;
+	}
+	@Override
+	public String getIdentificador() {
+		return nombreEmpresa+Integer.toString(tamanoEmpresa);
+	}
 }
