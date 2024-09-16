@@ -5,11 +5,11 @@ import java.util.List;
 import uniandes.dpoo.aerolinea.tiquetes.Tiquete;
 
 public abstract class Cliente {
-	protected Tiquete[] tiquetesSinUsar;
-	protected Tiquete[] tiquetesUsados ;
+	protected ArrayList<Tiquete> tiquetesSinUsar;
+	protected ArrayList<Tiquete> tiquetesUsados;
 	public Cliente() {
-		this.tiquetesSinUsar= new Tiquete[1];
-		this.tiquetesUsados = new Tiquete[1];
+		this.tiquetesSinUsar= new ArrayList<Tiquete>();
+		this.tiquetesUsados = new ArrayList<Tiquete>();
 	}	
 	public abstract String getTipoCliente();
 	public abstract String getIdentificador();
