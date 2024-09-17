@@ -12,7 +12,7 @@ public abstract class CalculadoraTarifas {
 		
 	}
 	protected abstract int calcularCostoBase(Vuelo vuelo, Cliente cliente);
-	protected abstract int calcularPorcentajeDescuento(Vuelo vuelo, Cliente cliente);
+	protected abstract int calcularPorcentajeDescuento(Cliente cliente);
 	protected int calcularDistanciaVuelo(Ruta ruta) {
 		Aeropuerto origen= ruta.getOrigen();
 		Aeropuerto destino= ruta.getDestino();
