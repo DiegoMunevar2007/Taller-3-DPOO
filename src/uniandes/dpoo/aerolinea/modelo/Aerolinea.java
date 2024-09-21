@@ -188,8 +188,14 @@ public class Aerolinea
     public Collection<Tiquete> getTiquetes( )
     {
         // TODO implementar
-        return null;
-
+    	ArrayList<Tiquete> tiquetes = new ArrayList<Tiquete>();
+        for (Vuelo vuelo: vuelos) {
+        	ArrayList<Tiquete> tiquetesVuelo=vuelo.getTiquetes();
+        	for (Tiquete tiquete: tiquetesVuelo) {
+        		tiquetes.add(tiquete);
+        	}
+        }
+        return tiquetes;
     }
 
     // ************************************************************************************
@@ -271,6 +277,21 @@ public class Aerolinea
     public void programarVuelo( String fecha, String codigoRuta, String nombreAvion ) throws Exception
     {
         // TODO Implementar el método
+    	Ruta ruta =rutas.get(codigoRuta);
+    	boolean disponible =true;
+    	for (Vuelo vuelo : vuelos) {
+    		if (vuelo.getAvion().getNombre().equals(nombreAvion) && vuelo.getFecha().equals(fecha)) {
+    			disponible =false;
+    		}
+    	}
+    	if (disponible ==true){
+    	for (Avion avion: aviones) {
+    		if (avion.getNombre().equals(nombreAvion)){
+    			Vuelo vuelo = new Vuelo(ruta, fecha, avion);
+    			vuelos.add(vuelo);
+    		}
+    	  }
+        }
     }
 
     /**
@@ -301,7 +322,12 @@ public class Aerolinea
      */
     public void registrarVueloRealizado( String fecha, String codigoRuta )
     {
-        // TODO Implementar el método
+        for (Vuelo vuelo: vuelos) {
+        	if (vuelo.getRuta().getCodigoRuta().equals(codigoRuta) && vuelo.getFecha().equals(fecha)) {
+        		vuelos.remove(vuelo);
+        		System.out.println("Vuelo "+ vuelo.getRuta() + " eliminado");
+        	}
+        }
     }
 
     /**
@@ -311,8 +337,9 @@ public class Aerolinea
      */
     public String consultarSaldoPendienteCliente( String identificadorCliente )
     {
-        // TODO Implementar el método
-        return "";
+        Cliente cliente=clientes.get(identificadorCliente);
+        int valor=cliente.calcularValorTiquetes();
+        return Integer.toString(valor);
     }
 
 }

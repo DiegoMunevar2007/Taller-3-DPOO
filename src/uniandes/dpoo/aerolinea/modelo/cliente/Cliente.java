@@ -2,6 +2,7 @@ package uniandes.dpoo.aerolinea.modelo.cliente;
 
 import java.util.ArrayList;
 
+import uniandes.dpoo.aerolinea.modelo.Vuelo;
 import uniandes.dpoo.aerolinea.tiquetes.Tiquete;
 
 public abstract class Cliente {
@@ -17,6 +18,22 @@ public abstract class Cliente {
 		tiquetesSinUsar.add(tiquete);
 	}
 	public int calcularValorTiquetes() {
-		
+		int valorTotal =0;
+		for (Tiquete tiquete : tiquetesSinUsar) {
+			valorTotal+=tiquete.getTarifa();
+		}
+		//for (Tiquete tiquete : tiquetesUsados) {
+		//	valorTotal+=tiquete.getTarifa();
+		//}
+		return valorTotal;
+	}
+	public void usarTiquetes(Vuelo vuelo) {
+		for (Tiquete tiquete : tiquetesSinUsar) {
+			if (tiquete.getVuelo().equals(vuelo)){
+				tiquete.marcarComoUsado();
+				tiquetesSinUsar.remove(tiquete);
+				tiquetesUsados.add(tiquete);
+			}
+		}
 	}
 }

@@ -16,7 +16,7 @@ public class Vuelo {
 	private Avion avion;
 	private Map<String,Tiquete> tiquetes;
 	
-	public Vuelo(String fecha, Ruta ruta, Avion avion) {
+	public Vuelo( Ruta ruta, String fecha, Avion avion) {
 		this.fecha = fecha;
 		this.ruta = ruta;
 		this.avion = avion;
