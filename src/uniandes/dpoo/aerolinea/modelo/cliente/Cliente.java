@@ -1,6 +1,6 @@
 package uniandes.dpoo.aerolinea.modelo.cliente;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import uniandes.dpoo.aerolinea.tiquetes.Tiquete;
 
@@ -14,7 +14,7 @@ public abstract class Cliente {
 	public abstract String getTipoCliente();
 	public abstract String getIdentificador();
 	public void agregarTiquete(Tiquete tiquete) {
-		tiquetesSinUsar[0]=tiquete;
+		tiquetesSinUsar.add(tiquete);
 	}
 	public int calcularValorTiquetes() {
 		

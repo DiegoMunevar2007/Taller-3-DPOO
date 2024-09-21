@@ -3,7 +3,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import uniandes.dpoo.aerolinea.exceptions.VueloSobrevendidoException;
 import uniandes.dpoo.aerolinea.modelo.cliente.Cliente;
+import uniandes.dpoo.aerolinea.tarifas.CalculadoraTarifas;
+import uniandes.dpoo.aerolinea.tiquetes.GeneradorTiquetes;
 import uniandes.dpoo.aerolinea.tiquetes.Tiquete;
 
 public class Vuelo {
@@ -12,6 +15,7 @@ public class Vuelo {
 	private Ruta ruta;
 	private Avion avion;
 	private Map<String,Tiquete> tiquetes;
+	
 	public Vuelo(String fecha, Ruta ruta, Avion avion) {
 		this.fecha = fecha;
 		this.ruta = ruta;
@@ -35,8 +39,33 @@ public class Vuelo {
 		return listaTiquetes;
 	}
 	
-	public int venderTiquetes(Cliente cliente, CalculadoraTarifas calculadora, int cantidad) {
-		
+	public int venderTiquetes(Cliente cliente, CalculadoraTarifas calculadora, int cantidad) throws VueloSobrevendidoException {
+		int tarifa = calculadora.calcularTarifa(this, cliente);
+		int precioTotal = 0;
+		for (int i=0; i<cantidad; i++ ) {
+			Tiquete tiquete =GeneradorTiquetes.generarTiquete(this, cliente, tarifa);
+			boolean valido = false;
+			while (valido ==false){
+			if (GeneradorTiquetes.validarTiquete(tiquete.getCodigo())!= true) {
+				GeneradorTiquetes.registrarTiquete(tiquete);
+				tiquetes.put(tiquete.getCodigo(), tiquete);
+				valido=true;
+				}
+			else {
+				 tiquete = GeneradorTiquetes.generarTiquete(this, cliente, tarifa);
+				}
+			}
+			precioTotal += tiquete.getTarifa();
+		}
+		if (tiquetes.size()>=avion.getCapacidad()) {
+			throw new VueloSobrevendidoException(this);
+		}
+		else {
+			return precioTotal;
+		}
+	}
+	public boolean equals (Object objeto) {
+		return this.equals(objeto);
 	}
 	// TODO: Hacer VenderTiquetes y equals
 }
