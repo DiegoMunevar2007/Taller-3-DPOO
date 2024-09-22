@@ -20,7 +20,6 @@ public abstract class Cliente {
 	public int calcularValorTiquetes() {
 		int valorTotal =0;
 		for (Tiquete tiquete : tiquetesSinUsar) {
-			System.out.println(tiquete);
 			valorTotal=tiquete.getTarifa() + valorTotal;
 		}
 		//for (Tiquete tiquete : tiquetesUsados) {

@@ -1,0 +1,40 @@
+{
+  "clientes": [{
+    "tipoCliente": "Natural",
+    "nombre": "Diego"
+  }],
+  "tiquetes": [
+    {
+      "fecha": "2024-09-21",
+      "tarifa": 1871616,
+      "cliente": "Diego",
+      "codigoRuta": "AV9",
+      "usado": true,
+      "codigoTiquete": "5731812"
+    },
+    {
+      "fecha": "2024-09-21",
+      "tarifa": 1871616,
+      "cliente": "Diego",
+      "codigoRuta": "AV10",
+      "usado": true,
+      "codigoTiquete": "31848252"
+    },
+    {
+      "fecha": "2024-09-22",
+      "tarifa": 1871616,
+      "cliente": "Diego",
+      "codigoRuta": "AV9",
+      "usado": true,
+      "codigoTiquete": "88767725"
+    },
+    {
+      "fecha": "2024-09-22",
+      "tarifa": 1871616,
+      "cliente": "Diego",
+      "codigoRuta": "AV10",
+      "usado": false,
+      "codigoTiquete": "46074201"
+    }
+  ]
+}

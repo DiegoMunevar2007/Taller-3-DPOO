@@ -412,15 +412,20 @@ public class Aerolinea {
      * @param codigoRuta El código de la ruta que recorrió el vuelo
      */
 
-    public void registrarVueloRealizado(String fecha, String codigoRuta) {
-        for (Vuelo vuelo : vuelos) {
+    public void registrarVueloRealizado(String fecha, String codigoRuta) throws Exception{
+        boolean encontrado = false;
+    	for (Vuelo vuelo : vuelos) {
             if (vuelo.getRuta().getCodigoRuta().equals(codigoRuta) && vuelo.getFecha().equals(fecha)) {
+            	encontrado =true;
                 for (Tiquete tiquete : vuelo.getTiquetes()) {
                     tiquete.getCliente().usarTiquetes(vuelo);
                 }
 
             }
         }
+    	if (encontrado== false) {
+        throw new Exception("No se ha encontrado el vuelo");
+    	}
     }
 
     /**

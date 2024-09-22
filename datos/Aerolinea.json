@@ -1,0 +1,84 @@
+{
+  "aviones": [
+    {
+      "nombre": "Avianca SK10",
+      "capacidad": 200
+    },
+    {
+      "nombre": "Avianca SK11",
+      "capacidad": 200
+    },
+    {
+      "nombre": "Avianca SK10",
+      "capacidad": 200
+    },
+    {
+      "nombre": "Avianca SK11",
+      "capacidad": 200
+    }
+  ],
+  "aeropuertos": [
+    {
+      "codigo": "MIA",
+      "latitud": 25.7949789,
+      "longitud": -80.28672341,
+      "nombreCiudad": "Miami",
+      "nombre": "Miami Intl"
+    },
+    {
+      "codigo": "BOG",
+      "latitud": 4.69877875,
+      "longitud": -74.1413842414,
+      "nombreCiudad": "Bogota",
+      "nombre": "El Dorado Intl"
+    }
+  ],
+  "vuelos": [
+    {
+      "fecha": "2024-09-21",
+      "codigoRuta": "AV9",
+      "avion": "Avianca SK10"
+    },
+    {
+      "fecha": "2024-09-21",
+      "codigoRuta": "AV10",
+      "avion": "Avianca SK11"
+    },
+    {
+      "fecha": "2024-09-22",
+      "codigoRuta": "AV9",
+      "avion": "Avianca SK10"
+    },
+    {
+      "fecha": "2024-09-22",
+      "codigoRuta": "AV9",
+      "avion": "Avianca SK10"
+    },
+    {
+      "fecha": "2024-09-22",
+      "codigoRuta": "AV10",
+      "avion": "Avianca SK11"
+    },
+    {
+      "fecha": "2024-09-22",
+      "codigoRuta": "AV10",
+      "avion": "Avianca SK11"
+    }
+  ],
+  "rutas": [
+    {
+      "codigoRuta": "AV9",
+      "horaLlegada": "2300",
+      "origen": "MIA",
+      "destino": "BOG",
+      "horaSalida": "2000"
+    },
+    {
+      "codigoRuta": "AV10",
+      "horaLlegada": "2300",
+      "origen": "BOG",
+      "destino": "MIA",
+      "horaSalida": "2000"
+    }
+  ]
+}

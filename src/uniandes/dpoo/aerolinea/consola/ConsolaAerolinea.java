@@ -27,7 +27,7 @@ public class ConsolaAerolinea extends ConsolaBasica {
     }
 
     private void menu() {
-        try {
+     
             // String archivo = this.pedirCadenaAlUsuario( "Digite el nombre del archivo
             // json con la información de una aerolinea" );
             String[] opcionesInicio = { "Cargar un/unos JSON de aerolineas", "Programar un vuelo","Crear un nuevo Cliente", "Guardar en formato JSON",
@@ -42,7 +42,8 @@ public class ConsolaAerolinea extends ConsolaBasica {
                     int respuestaOpcion1 = mostrarMenu("Opciones",
                             new String[] { "Cargar JSON de informacion de aerolineas",
                                     "Cargar JSON de informacion de clientes y tiquetes", "Cargar ambos" });
-                    if (respuestaOpcion1 == 1) {
+                    try {
+                    	if (respuestaOpcion1 == 1) {
                         String archivo = this.pedirCadenaAlUsuario(
                                 "Digite el nombre del archivo json con la información de una aerolinea sin extension");
                         unaAerolinea.cargarAerolinea("./datos/" + archivo + ".json", CentralPersistencia.JSON);
@@ -61,6 +62,10 @@ public class ConsolaAerolinea extends ConsolaBasica {
                                 "Digite el nombre del archivo json con la información de los tiquetes sin extension");
                         unaAerolinea.cargarTiquetes("./datos/" + archivo + ".json", CentralPersistencia.JSON);
                         System.out.println("Tiquetes cargados exitosamente");
+                    }
+                    }
+                    catch (Exception e) {
+                    	System.out.println("No se ha encontrado dicho archivo" + e.getMessage());
                     }
 
                 } else if (respuesta == 2) {
@@ -162,25 +167,25 @@ public class ConsolaAerolinea extends ConsolaBasica {
                         unaAerolinea.registrarVueloRealizado(fecha, codigoRuta);
                         System.out.println("Vuelo registrado como realizado");
                     } catch (Exception e) {
-                        System.out.println(e.getMessage());
+                        System.out.println( e.getMessage());
                     }
                 } else if (respuesta == 7) {
                     String idCliente = pedirCadenaAlUsuario("Ingrese el ID del Cliente");
+                    try {
                     String saldo = unaAerolinea.consultarSaldoPendienteCliente(idCliente);
                     System.out.println("El saldo pendiente del cliente es de: " + saldo);
+                    }
+                    catch (Exception e) {
+                    	System.out.println("El cliente no ha sido encontrado");
+                    }
+                    
                 }
 
                 else if (respuesta == 8) {
                     finalizado = true;
                 }
             }
-        } catch (TipoInvalidoException e) {
-            e.printStackTrace();
-        } catch (InformacionInconsistenteException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
     }
 
     private Avion agregarAvion() {
@@ -208,8 +213,7 @@ public class ConsolaAerolinea extends ConsolaBasica {
             unaAerolinea.agregarRuta(ruta);
 
         } else {
-            System.out.println("Codigo de ruta ya existe");
-            agregarRuta();
+            return unaAerolinea.getRuta(codigo);
         }
         return ruta;
     }
