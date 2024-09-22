@@ -1,0 +1,133 @@
+{
+  "aviones": [
+    {
+      "nombre": "10",
+      "capacidad": 10
+    },
+    {
+      "nombre": "19",
+      "capacidad": 19
+    }
+  ],
+  "vuelos": [
+    {
+      "fecha": "2020-01-01",
+      "ruta": {"rutas": [
+        {
+          "codigoRuta": "18",
+          "horaLlegada": "191",
+          "origen": {
+            "latitud": 0,
+            "longitud": 0
+          },
+          "destino": {
+            "latitud": 0,
+            "longitud": 0
+          },
+          "horaSalida": "19"
+        },
+        {
+          "codigoRuta": "10",
+          "horaLlegada": "19",
+          "origen": {
+            "latitud": 0,
+            "longitud": 0
+          },
+          "destino": {
+            "codigo": "BOG",
+            "latitud": 1,
+            "longitud": 1,
+            "nombreCiudad": "Bogota",
+            "nombre": "El Dorado"
+          },
+          "horaSalida": "10"
+        }
+      ]},
+      "avion": {"aviones": [
+        {
+          "nombre": "10",
+          "capacidad": 10
+        },
+        {
+          "nombre": "19",
+          "capacidad": 19
+        }
+      ]}
+    },
+    {
+      "fecha": "2020-01",
+      "ruta": {"rutas": [
+        {
+          "codigoRuta": "18",
+          "horaLlegada": "191",
+          "origen": {
+            "latitud": 0,
+            "longitud": 0
+          },
+          "destino": {
+            "latitud": 0,
+            "longitud": 0
+          },
+          "horaSalida": "19"
+        },
+        {
+          "codigoRuta": "10",
+          "horaLlegada": "19",
+          "origen": {
+            "latitud": 0,
+            "longitud": 0
+          },
+          "destino": {
+            "codigo": "BOG",
+            "latitud": 1,
+            "longitud": 1,
+            "nombreCiudad": "Bogota",
+            "nombre": "El Dorado"
+          },
+          "horaSalida": "10"
+        }
+      ]},
+      "avion": {"aviones": [
+        {
+          "nombre": "10",
+          "capacidad": 10
+        },
+        {
+          "nombre": "19",
+          "capacidad": 19
+        }
+      ]}
+    }
+  ],
+  "rutas": [
+    {
+      "codigoRuta": "18",
+      "horaLlegada": "191",
+      "origen": {
+        "latitud": 0,
+        "longitud": 0
+      },
+      "destino": {
+        "latitud": 0,
+        "longitud": 0
+      },
+      "horaSalida": "19"
+    },
+    {
+      "codigoRuta": "10",
+      "horaLlegada": "19",
+      "origen": {
+        "latitud": 0,
+        "longitud": 0
+      },
+      "destino": {
+        "codigo": "BOG",
+        "latitud": 1,
+        "longitud": 1,
+        "nombreCiudad": "Bogota",
+        "nombre": "El Dorado"
+      },
+      "horaSalida": "10"
+    }
+  ]
+}

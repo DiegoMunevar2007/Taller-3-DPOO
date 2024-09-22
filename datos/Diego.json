@@ -1,0 +1,30 @@
+{
+  "aviones": [{
+    "nombre": "1",
+    "capacidad": 1
+  }],
+  "vuelos": [{
+    "fecha": "2020-04-01",
+    "codigoRuta": "1",
+    "avion": "1"
+  }],
+  "rutas": [{
+    "codigoRuta": "1",
+    "horaLlegada": "12",
+    "origen": {
+      "codigo": "BOG",
+      "latitud": 12,
+      "longitud": 1,
+      "nombreCiudad": "12",
+      "nombre": "12"
+    },
+    "destino": {
+      "codigo": "BOG",
+      "latitud": 12,
+      "longitud": 1,
+      "nombreCiudad": "12",
+      "nombre": "12"
+    },
+    "horaSalida": "1203"
+  }]
+}

@@ -110,6 +110,7 @@ public class PersistenciaTiquetesJson implements IPersistenciaTiquetes
             else
                 throw new ClienteRepetidoException( nuevoCliente.getTipoCliente( ), nuevoCliente.getIdentificador( ) );
         }
+        
     }
 
     /**
@@ -131,6 +132,7 @@ public class PersistenciaTiquetesJson implements IPersistenciaTiquetes
             {
                 JSONObject jCliente = new JSONObject( );
                 jCliente.put( NOMBRE_CLIENTE, cliente.getIdentificador( ) );
+                jCliente.put("tipoCliente", "Natural" );
                 jClientes.put( jCliente );
             }
             else
@@ -160,10 +162,15 @@ public class PersistenciaTiquetesJson implements IPersistenciaTiquetes
 
             // Extraer y validar la información del tiquete
             String codigoRuta = tiquete.getString( CODIGO_RUTA );
+            for (Ruta ruta:aerolinea.getRutas()) {
+            	System.out.println(ruta.getCodigoRuta());
+            }
             Ruta laRuta = aerolinea.getRuta( codigoRuta );
-            if( laRuta == null )
+            if( laRuta == null ) {
+            	System.out.println("ola");
                 throw new InformacionInconsistenteTiqueteException( "ruta", codigoRuta );
-
+                
+            }
             String fechaVuelo = tiquete.getString( FECHA );
             Vuelo elVuelo = aerolinea.getVuelo( codigoRuta, fechaVuelo );
             if( elVuelo == null )

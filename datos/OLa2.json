@@ -1,0 +1,34 @@
+{
+  "aviones": [{
+    "nombre": "Super Cool",
+    "capacidad": 120
+  }],
+  "aeropuertos": [
+    {
+      "codigo": "LHR",
+      "latitud": 129,
+      "longitud": 12,
+      "nombreCiudad": "120",
+      "nombre": "heathrow"
+    },
+    {
+      "codigo": "BOG",
+      "latitud": 10,
+      "longitud": 12,
+      "nombreCiudad": "Bogota",
+      "nombre": "El dorado"
+    }
+  ],
+  "vuelos": [{
+    "fecha": "2020-01-01",
+    "codigoRuta": "1",
+    "avion": "Super Cool"
+  }],
+  "rutas": [{
+    "codigoRuta": "1",
+    "horaLlegada": "283",
+    "origen": {"codigo": "LHR"},
+    "destino": {"codigo": "BOG"},
+    "horaSalida": "120"
+  }]
+}

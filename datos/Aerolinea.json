@@ -1,0 +1,34 @@
+{
+  "aviones": [{
+    "nombre": "Avianca 191",
+    "capacidad": 250
+  }],
+  "aeropuertos": [
+    {
+      "codigo": "MIA",
+      "latitud": 10.127,
+      "longitud": 8.1928,
+      "nombreCiudad": "Miami",
+      "nombre": "Miami Intl"
+    },
+    {
+      "codigo": "BOG",
+      "latitud": 1921,
+      "longitud": 91.74,
+      "nombreCiudad": "Bogota",
+      "nombre": "El dorado"
+    }
+  ],
+  "vuelos": [{
+    "fecha": "2024-09-21",
+    "codigoRuta": "AV9",
+    "avion": "Avianca 191"
+  }],
+  "rutas": [{
+    "codigoRuta": "AV9",
+    "horaLlegada": "1931",
+    "origen": "BOG",
+    "destino": "MIA",
+    "horaSalida": "1810"
+  }]
+}

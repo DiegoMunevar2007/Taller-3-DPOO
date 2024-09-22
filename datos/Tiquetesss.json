@@ -1,0 +1,14 @@
+{
+  "clientes": [
+    {
+      "tipoCliente": "Natural",
+      "nombre": "Diego"
+    },
+    {
+      "tipo": "Corporativo",
+      "tamanoEmpresa": 3,
+      "nombreEmpresa": "Juanse"
+    }
+  ],
+  "tiquetes": []
+}
