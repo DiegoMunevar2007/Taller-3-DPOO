@@ -30,7 +30,7 @@ public class ConsolaAerolinea extends ConsolaBasica {
         try {
             // String archivo = this.pedirCadenaAlUsuario( "Digite el nombre del archivo
             // json con la información de una aerolinea" );
-            String[] opcionesInicio = { "Cargar un/unos JSON de aerolineas", "Programar un vuelo","Crear un nuevo Cliente", "Guardar",
+            String[] opcionesInicio = { "Cargar un/unos JSON de aerolineas", "Programar un vuelo","Crear un nuevo Cliente", "Guardar en formato JSON",
                     "Vender tiquetes",
                     "Registrar vuelo como realizado", "Consultar saldo pendiente de cliente", "Salir" };
 
@@ -44,21 +44,21 @@ public class ConsolaAerolinea extends ConsolaBasica {
                                     "Cargar JSON de informacion de clientes y tiquetes", "Cargar ambos" });
                     if (respuestaOpcion1 == 1) {
                         String archivo = this.pedirCadenaAlUsuario(
-                                "Digite el nombre del archivo json con la información de una aerolinea");
+                                "Digite el nombre del archivo json con la información de una aerolinea sin extension");
                         unaAerolinea.cargarAerolinea("./datos/" + archivo + ".json", CentralPersistencia.JSON);
                         System.out.println("Aerolinea cargada exitosamente");
                     } else if (respuestaOpcion1 == 2) {
                         String archivo = this.pedirCadenaAlUsuario(
-                                "Digite el nombre del archivo json con la información de los tiquetes");
+                                "Digite el nombre del archivo json con la información de los tiquetes sin extension");
                         unaAerolinea.cargarTiquetes("./datos/" + archivo + ".json", CentralPersistencia.JSON);
                         System.out.println("Tiquetes cargados exitosamente");
                     } else if (respuestaOpcion1 == 3) {
                         String archivo = this.pedirCadenaAlUsuario(
-                                "Digite el nombre del archivo json con la información de una aerolinea");
+                                "Digite el nombre del archivo json con la información de una aerolinea sin extension");
                         unaAerolinea.cargarAerolinea("./datos/" + archivo + ".json", CentralPersistencia.JSON);
                         System.out.println("Aerolinea cargada exitosamente");
                         archivo = this.pedirCadenaAlUsuario(
-                                "Digite el nombre del archivo json con la información de los tiquetes");
+                                "Digite el nombre del archivo json con la información de los tiquetes sin extension");
                         unaAerolinea.cargarTiquetes("./datos/" + archivo + ".json", CentralPersistencia.JSON);
                         System.out.println("Tiquetes cargados exitosamente");
                     }
@@ -113,10 +113,10 @@ public class ConsolaAerolinea extends ConsolaBasica {
                 else if (respuesta == 4) {
                     int respuestaOpcion3 = mostrarMenu("Opciones",
                             new String[] { "Guardar JSON de informacion de aerolineas",
-                                    "Cargar JSON de informacion de clientes y tiquetes", "Cargar ambos" });
+                                    "Guardar JSON de informacion de clientes y tiquetes", "Guardar ambos" });
                     if (respuestaOpcion3 == 1) {
                         try {
-                            String archivo = pedirCadenaAlUsuario("Ingrese el nombre del archivo de vuelos a guardar");
+                            String archivo = pedirCadenaAlUsuario("Ingrese el nombre del archivo de vuelos a guardar sin extension");
                             unaAerolinea.salvarAerolinea(DIRECTORIO + archivo + ".json", CentralPersistencia.JSON);
                             System.out.println("Aerolinea guardada exitosamente");
                         } catch (Exception e) {
@@ -125,7 +125,7 @@ public class ConsolaAerolinea extends ConsolaBasica {
                     } else if (respuestaOpcion3 == 2) {
                         try {
                             String archivo = pedirCadenaAlUsuario(
-                                    "Ingrese el nombre del archivo de Tiquetes a guardar");
+                                    "Ingrese el nombre del archivo de Tiquetes a guardar sin extension");
                             unaAerolinea.salvarTiquetes(DIRECTORIO + archivo + ".json", CentralPersistencia.JSON);
                             System.out.println("Tiquetes guardados exitosamente");
                         } catch (Exception e) {
@@ -133,10 +133,10 @@ public class ConsolaAerolinea extends ConsolaBasica {
                         }
                     } else if (respuestaOpcion3 == 3) {
                         try {
-                            String archivo = pedirCadenaAlUsuario("Ingrese el nombre del archivo de vuelos a guardar");
+                            String archivo = pedirCadenaAlUsuario("Ingrese el nombre del archivo de vuelos a guardar sin extension");
                             unaAerolinea.salvarAerolinea(DIRECTORIO + archivo + ".json", CentralPersistencia.JSON);
                             System.out.println("Aerolinea guardada exitosamente");
-                            archivo = pedirCadenaAlUsuario("Ingrese el nombre del archivo de Tiquetes a guardar");
+                            archivo = pedirCadenaAlUsuario("Ingrese el nombre del archivo de Tiquetes a guardar sin extension");
                             unaAerolinea.salvarTiquetes(DIRECTORIO + archivo + ".json", CentralPersistencia.JSON);
                             System.out.println("Tiquetes guardados exitosamente");
                         } catch (Exception e) {

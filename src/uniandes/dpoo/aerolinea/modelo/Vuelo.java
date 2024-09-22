@@ -49,6 +49,7 @@ public class Vuelo {
 			if (GeneradorTiquetes.validarTiquete(tiquete.getCodigo())!= true) {
 				GeneradorTiquetes.registrarTiquete(tiquete);
 				tiquetes.put(tiquete.getCodigo(), tiquete);
+				cliente.agregarTiquete(tiquete);
 				valido=true;
 				}
 			else {
@@ -64,8 +65,6 @@ public class Vuelo {
 			return precioTotal;
 		}
 	}
-	public boolean equals (Object objeto) {
-		return this.equals(objeto);
-	}
+	
 	// TODO: Hacer VenderTiquetes y equals
 }

@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Iterator;
 
 import uniandes.dpoo.aerolinea.exceptions.InformacionInconsistenteException;
 import uniandes.dpoo.aerolinea.exceptions.VueloSobrevendidoException;
@@ -410,11 +411,14 @@ public class Aerolinea {
      * @param fecha      La fecha del vuelo
      * @param codigoRuta El código de la ruta que recorrió el vuelo
      */
+
     public void registrarVueloRealizado(String fecha, String codigoRuta) {
         for (Vuelo vuelo : vuelos) {
             if (vuelo.getRuta().getCodigoRuta().equals(codigoRuta) && vuelo.getFecha().equals(fecha)) {
-                vuelos.remove(vuelo);
-                System.out.println("Vuelo " + vuelo.getRuta() + " eliminado");
+                for (Tiquete tiquete : vuelo.getTiquetes()) {
+                    tiquete.getCliente().usarTiquetes(vuelo);
+                }
+
             }
         }
     }
