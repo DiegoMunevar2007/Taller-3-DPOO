@@ -163,11 +163,9 @@ public class PersistenciaTiquetesJson implements IPersistenciaTiquetes
             // Extraer y validar la información del tiquete
             String codigoRuta = tiquete.getString( CODIGO_RUTA );
             for (Ruta ruta:aerolinea.getRutas()) {
-            	System.out.println(ruta.getCodigoRuta());
             }
             Ruta laRuta = aerolinea.getRuta( codigoRuta );
             if( laRuta == null ) {
-            	System.out.println("ola");
                 throw new InformacionInconsistenteTiqueteException( "ruta", codigoRuta );
                 
             }

@@ -1,84 +1,56 @@
 {
   "aviones": [
     {
-      "nombre": "Avianca SK10",
-      "capacidad": 200
+      "nombre": "Avianca 1",
+      "capacidad": 100
     },
     {
-      "nombre": "Avianca SK11",
-      "capacidad": 200
-    },
-    {
-      "nombre": "Avianca SK10",
-      "capacidad": 200
-    },
-    {
-      "nombre": "Avianca SK11",
-      "capacidad": 200
+      "nombre": "Avianca 2",
+      "capacidad": 250
     }
   ],
   "aeropuertos": [
     {
-      "codigo": "MIA",
-      "latitud": 25.7949789,
-      "longitud": -80.28672341,
-      "nombreCiudad": "Miami",
-      "nombre": "Miami Intl"
+      "codigo": "MCO",
+      "latitud": 21,
+      "longitud": 12,
+      "nombreCiudad": "Orleando",
+      "nombre": "Orlando"
     },
     {
       "codigo": "BOG",
-      "latitud": 4.69877875,
-      "longitud": -74.1413842414,
+      "latitud": 12,
+      "longitud": 12,
       "nombreCiudad": "Bogota",
-      "nombre": "El Dorado Intl"
+      "nombre": "Bogota"
     }
   ],
   "vuelos": [
     {
       "fecha": "2024-09-21",
       "codigoRuta": "AV9",
-      "avion": "Avianca SK10"
+      "avion": "Avianca 1"
     },
     {
       "fecha": "2024-09-21",
       "codigoRuta": "AV10",
-      "avion": "Avianca SK11"
-    },
-    {
-      "fecha": "2024-09-22",
-      "codigoRuta": "AV9",
-      "avion": "Avianca SK10"
-    },
-    {
-      "fecha": "2024-09-22",
-      "codigoRuta": "AV9",
-      "avion": "Avianca SK10"
-    },
-    {
-      "fecha": "2024-09-22",
-      "codigoRuta": "AV10",
-      "avion": "Avianca SK11"
-    },
-    {
-      "fecha": "2024-09-22",
-      "codigoRuta": "AV10",
-      "avion": "Avianca SK11"
+      "avion": "Avianca 2"
     }
   ],
   "rutas": [
     {
       "codigoRuta": "AV9",
-      "horaLlegada": "2300",
-      "origen": "MIA",
-      "destino": "BOG",
-      "horaSalida": "2000"
+      "horaLlegada": "1200",
+      "origen": "BOG",
+      "destino": "MCO",
+      "horaSalida": "1000"
     },
     {
       "codigoRuta": "AV10",
-      "horaLlegada": "2300",
-      "origen": "BOG",
-      "destino": "MIA",
-      "horaSalida": "2000"
+      "horaLlegada": "1100",
+      "origen": "MCO",
+      "destino": "BOG",
+      "horaSalida": "1000"
     }
   ]
 }
